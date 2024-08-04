@@ -1,9 +1,6 @@
 # Fabric Example Mod
 
-## Setup
+Hooked in with rust
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Note: dunno why but it cant find the dynlib file to load
+but it SHOULD work if it did
