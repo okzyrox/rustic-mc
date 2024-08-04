@@ -18,5 +18,9 @@ public class ExampleMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+
+		LOGGER.info("Loading rust lib")
+
+		RustModLibrary.INSTANCE.hello_world();
 	}
 }
