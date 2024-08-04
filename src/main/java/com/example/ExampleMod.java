@@ -18,9 +18,10 @@ public class ExampleMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
-		LOGGER.info("Working Directory = " + System.getProperty("user.dir"));
 		LOGGER.info("Loading rust lib");
 
 		RustModLibrary.INSTANCE.hello_world();
+
+		LOGGER.info("Loaded rust lib (rustmods/rustmod)");
 	}
 }
