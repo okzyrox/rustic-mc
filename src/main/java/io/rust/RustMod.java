@@ -1,11 +1,13 @@
-package com.example;
+package io.rust;
 
 import net.fabricmc.api.ModInitializer;
 
+import com.sun.jna.Pointer;
+import com.sun.jna.ptr.PointerByReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ExampleMod implements ModInitializer {
+public class RustMod implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
@@ -33,5 +35,21 @@ public class ExampleMod implements ModInitializer {
         
         //Item item = new Item(new Item.Settings());
         //Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MODID, "rust_item"),
+		Pointer itemsListPointer = RustModLibrary.INSTANCE.get_items_list();
+		int index = 0;
+        while (true) {
+            Pointer itemPointer = itemsListPointer.getPointer(index);
+            if (itemPointer == Pointer.NULL) {
+                break;
+            }
+            String str = itemPointer.getString(0);
+            LOGGER.info("(rustmod) - registering item: " + str);
+			// register once i learn java
+			RustModLibrary.INSTANCE.register_item(str);
+            index++;
+
+        }
+
+		RustModLibrary.INSTANCE.free_items_list(itemsListPointer);
 	}
 }

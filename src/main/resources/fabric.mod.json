@@ -8,24 +8,24 @@
 		"Me!"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/okzyrox",
+		"sources": "https://github.com/okzyrox/rustic-mc"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"icon": "assets/rustmod/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"io.rust.RustMod"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"io.rust.RustModClient"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
+		"rustmod.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "rustmod.client.mixins.json",
 			"environment": "client"
 		}
 	],
