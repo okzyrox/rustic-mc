@@ -20,8 +20,18 @@ public class ExampleMod implements ModInitializer {
 		LOGGER.info("Hello Fabric world!");
 		LOGGER.info("Loading rust lib");
 
-		RustModLibrary.INSTANCE.hello_world();
+		RustModLibrary.INSTANCE.load();
 
 		LOGGER.info("Loaded rust lib (rustmods/rustmod)");
+
+		// register item TEST
+		// ideally we get the item data from the function
+		// then use that to create the item
+
+		//Identifier id = new Identifier("example", "rust_item");
+        RustModLibrary.INSTANCE.register_item("rust_item");
+        
+        //Item item = new Item(new Item.Settings());
+        //Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(MODID, "rust_item"),
 	}
 }

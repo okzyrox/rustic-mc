@@ -5,6 +5,7 @@ import com.sun.jna.Native;
 
 public interface RustModLibrary extends Library {
     RustModLibrary INSTANCE = Native.load("rustmods/rustmod", RustModLibrary.class);
-    // add the funcs
-    void hello_world();
+    // core funcs
+    void load();
+    void register_item(String name);
 }

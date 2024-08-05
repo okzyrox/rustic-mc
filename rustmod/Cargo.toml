@@ -7,3 +7,5 @@ edition = "2021"
 crate-type = ["dylib", "rlib"]
 
 [dependencies]
+log = "0.4.22"
+simple-logging = "2.0.2"
